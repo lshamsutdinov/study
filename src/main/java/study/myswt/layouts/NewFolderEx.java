@@ -32,6 +32,7 @@ public class NewFolderEx {
 
 		Shell shell = new Shell(display, SWT.SHELL_TRIM | SWT.CENTER);
 		shell.setLayout(new FormLayout());
+		shell.setText("New folder");
 
 		Label lbl = new Label(shell, SWT.LEFT);
 		lbl.setText("Name:");
@@ -51,6 +52,10 @@ public class NewFolderEx {
 		Composite com = new Composite(shell, SWT.NONE);
 		RowLayout rowLayout = new RowLayout();
 		com.setLayout(rowLayout);
+		FormData data3 = new FormData();
+		data3.bottom = new FormAttachment(100, -5);
+		data3.right = new FormAttachment(100, 0);
+		com.setLayoutData(data3);
 
 		Button okBtn = new Button(com, SWT.PUSH);
 		okBtn.setText("OK");
@@ -58,11 +63,6 @@ public class NewFolderEx {
 		Button closeBtn = new Button(com, SWT.PUSH);
 		closeBtn.setText("Close");
 		closeBtn.setLayoutData(new RowData(80, 30));
-
-		FormData data3 = new FormData();
-		data3.bottom = new FormAttachment(100, -5);
-		data3.right = new FormAttachment(100, 0);
-		com.setLayoutData(data3);
 
 		Text mainText = new Text(shell, SWT.MULTI | SWT.BORDER);
 		FormData data4 = new FormData();
@@ -74,7 +74,6 @@ public class NewFolderEx {
 		data4.bottom = new FormAttachment(com, -10);
 		mainText.setLayoutData(data4);
 
-		shell.setText("New folder");
 		shell.pack();
 		shell.open();
 
